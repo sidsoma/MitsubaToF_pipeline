@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene version="0.5.0">
+    <!-- Integrator Parameters -->
+	<integrator type="bdpt">
+        <integer name="maxDepth" value="5"/>
+		<boolean name="sampleDirect" value="false"/>
+		<boolean name="lightImage" value="false"/> 
+	</integrator>
+
+    <!-- Sensor Parameters -->
+	<sensor type="perspective">
+		<!-- <float name="farClip" value="2800"/> -->
+		<float name="focusDistance" value="10000"/>
+		<float name="fov" value="$fov"/>
+		<string name="fovAxis" value="$fovAxis"/>
+		<!-- <float name="nearClip" value="10"/> -->
+
+		<transform name="toWorld">
+			<lookat target="$look_x, $look_y, $look_z" origin="$cam_x, $cam_y, $cam_z" up="0, 1, 0"/>
+		</transform>
+		
+		<sampler type="ldsampler">
+			<integer name="sampleCount" value="$numSamples"/>
+		</sampler>
+
+		<film type="hdrfilm">
+            <boolean name="banner" value="false"/>
+
+			<integer name="height" value="$y_res"/>
+			<integer name="width" value="$x_res"/>
+			<string name="decomposition" value="transient"/>
+			<float name="minBound" value="$tMin"/>
+			<float name="maxBound" value="$tMax"/>
+			<float name="binWidth" value="$tRes"/>
+
+            <string name="modulation" value="none"/>
+            <float name="lambda" value="200"/>
+            <float name="phase" value="0"/>
+
+			<rfilter type="gaussian"/>
+
+		</film>
+	</sensor>
+
+    <!-- Illumination Parameters -->
+    <emitter type="perspectiveprojector" id="light 0">
+        <float name="fov" value="$fov"/>
+        <string name="fovAxis" value="$fovAxis"/>
+        <!-- <float name="nearClip" value="10"/>
+        <float name="farClip" value="2800"/> -->
+        <float name="focusDistance" value="10000"/>
+        <transform name="toWorld">
+            <lookat target="$look_x, $look_y, $look_z" origin="$cam_x, $cam_y, $cam_z" up="0, 1, 0"/>
+        </transform>
+        <string name="filename" value="$proj_img"/>
+        <float name="scale" value="10000000"/>
+    </emitter>
+
+    <!-- Define scene -->
+	<include filename="$scene"/>
+	
+</scene>

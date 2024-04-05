@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<scene version="0.5.0">
+	
+	<shape type="cube">
+		<transform name="toWorld">
+			<scale x="1." y="0.5" z="0.00000001"/>
+			<translate x="0.3" y="0" z="1.4"/> 
+		</transform>
+		<bsdf type="diffuse"/>
+	</shape>
+
+	<shape type="cube">
+		<transform name="toWorld">
+			<scale x="10.0" y="0.0001" z="1"/>
+			<translate x="0" y="-1" z="0"/> 
+		</transform>
+		<bsdf type="diffuse"/>
+	</shape>
+	
+	
+</scene>

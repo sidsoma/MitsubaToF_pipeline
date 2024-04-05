@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<scene version="0.5.0">
+	
+    <!-- Back wall -->
+	<shape type="cube">
+		<transform name="toWorld">
+			<scale x="0.5" y="0.5" z="0.00000001"/>
+            <lookat target="0, 0, 2" origin="0,0,1.2" up="0,1,0"/>
+		</transform>
+		<bsdf type="diffuse"/>
+	</shape>
+    <!-- Left wall -->
+	<shape type="cube">
+		<transform name="toWorld">
+			<scale x="0.0000001" y="0.5" z="0.5"/>
+            <translate x="0.5" y="0" z="1."/>
+		</transform>
+		<bsdf type="diffuse"/>
+	</shape>
+
+    <!-- Right wall -->
+	<shape type="cube">
+		<transform name="toWorld">
+			<scale x="0.0000001" y="0.5" z="0.5"/>
+            <translate x="-0.5" y="0" z="1."/>
+		</transform>
+		<bsdf type="diffuse"/>
+	</shape>
+
+    <!-- Top wall -->
+	<shape type="cube">
+		<transform name="toWorld">
+			<scale x="0.5" y="0.0000001" z="0.5"/>
+            <translate x="0" y="0.5" z="1."/>
+		</transform>
+		<bsdf type="diffuse"/>
+	</shape>
+
+    <!--Bottom wall -->
+	<shape type="cube">
+		<transform name="toWorld">
+			<scale x="0.5" y="0.0000001" z="0.5"/>
+            <translate x="0" y="-0.5" z="1."/>
+		</transform>
+		<bsdf type="diffuse"/>
+	</shape>
+
+    <!--Sphere 1 -->
+    <shape type="sphere">
+        <point name="center" x="0.25" y="0.25" z="1.1"/>
+        <float name="radius" value="0.28"/>
+    </shape>
+
+    <!--Box-->
+	<shape type="cube">
+		<transform name="toWorld">
+			<scale x="0.15" y="0.25" z="0.15"/>
+            <rotate y="1" angle="45"/>
+            <translate x="-0.2" y="-0.25" z="0.9"/>
+		</transform>
+		<bsdf type="diffuse"/>
+	</shape>
+	
+	
+</scene>

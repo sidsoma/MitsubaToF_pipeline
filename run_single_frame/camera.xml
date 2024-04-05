@@ -3,7 +3,7 @@
 <scene version="0.5.0">
     <!-- Integrator Parameters -->
 	<integrator type="bdpt">
-        <integer name="maxDepth" value="5"/>
+        <integer name="maxDepth" value="2"/>
 		<boolean name="sampleDirect" value="false"/>
 		<boolean name="lightImage" value="false"/> 
 	</integrator>

@@ -23,7 +23,7 @@ def run_scan_fn(cam_x, cam_y):
         # exp_name = f'diffuse_patch_test_2_x_{cam_x:.2f}_y_{cam_y:.2f}'
         # scene_name = '../scenes/test_patch_2.xml'
         # numSamples = 16
-        exp_name = f'sphere_cbox_v5_x_{cam_x:.2f}_y_{cam_y:.2f}'
+        exp_name = f'sphere_cbox_v6_x_{cam_x:.2f}_y_{cam_y:.2f}'
         scene_name = '../scenes/sphere_cbox.xml'
         numSamples = 16
     else:
@@ -55,8 +55,8 @@ def run_scan_fn(cam_x, cam_y):
     cam_y = cam_y
     cam_z = 0
     # Camera Lookat position (world coordinates)
-    look_x = 0
-    look_y = 0
+    look_x = cam_x
+    look_y = cam_y
     # look_y = -1
     look_z = 1
 
@@ -168,8 +168,8 @@ def run_scan_fn(cam_x, cam_y):
     subprocess.call(f'cp -r /mitsuba/{exp_name} {save_dir}', shell=True)
     print(f'Files copied to {save_dir}/{exp_name}')
 
-num_x = 1
-num_y = 1
+num_x = 3
+num_y = 3
 cam_x_range = np.linspace(-0.05,0.05, num_x)
 cam_y_range = np.linspace(-0.05,0.05, num_y)
 
